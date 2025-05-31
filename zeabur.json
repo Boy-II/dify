@@ -1,0 +1,46 @@
+{
+  "services": [
+    {
+      "name": "dify-web",
+      "image": "dify/dify:1.4.1", // 指定 Dify 1.4.1 版本
+      "command": "web", // 運行 Dify 的 Web UI 服務
+      "ports": [
+        {
+          "port": 3000,
+          "protocol": "HTTP"
+        }
+      ],
+      "healthCheck": {
+        "path": "/",
+        "port": 3000,
+        "interval": 10,
+        "timeout": 5,
+        "threshold": 3
+      }
+    },
+    {
+      "name": "dify-api",
+      "image": "dify/dify:1.4.1", // 指定 Dify 1.4.1 版本
+      "command": "api", // 運行 Dify 的 API 服務
+      "ports": [
+        {
+          "port": 5001,
+          "protocol": "HTTP"
+        }
+      ],
+      "healthCheck": {
+        "path": "/health",
+        "port": 5001,
+        "interval": 10,
+        "timeout": 5,
+        "threshold": 3
+      }
+    },
+    {
+      "name": "dify-worker",
+      "image": "dify/dify:1.4.1", // 指定 Dify 1.4.1 版本
+      "command": "worker", // 運行 Dify 的後台 worker 服務
+      "expose": false // Worker 服務不需要對外暴露端口
+    }
+  ]
+}
