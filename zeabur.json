@@ -2,8 +2,8 @@
   "services": [
     {
       "name": "dify-web",
-      "image": "dify/dify:1.4.1", // 指定 Dify 1.4.1 版本
-      "command": "web", // 運行 Dify 的 Web UI 服務
+      "image": "dify/dify:1.4.1",
+      "command": "web",
       "ports": [
         {
           "port": 3000,
@@ -20,8 +20,8 @@
     },
     {
       "name": "dify-api",
-      "image": "dify/dify:1.4.1", // 指定 Dify 1.4.1 版本
-      "command": "api", // 運行 Dify 的 API 服務
+      "image": "dify/dify:1.4.1",
+      "command": "api",
       "ports": [
         {
           "port": 5001,
@@ -38,9 +38,9 @@
     },
     {
       "name": "dify-worker",
-      "image": "dify/dify:1.4.1", // 指定 Dify 1.4.1 版本
-      "command": "worker", // 運行 Dify 的後台 worker 服務
-      "expose": false // Worker 服務不需要對外暴露端口
+      "image": "dify/dify:1.4.1",
+      "command": "worker",
+      "expose": false
     }
   ]
 }
